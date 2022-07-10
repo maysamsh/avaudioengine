@@ -25,7 +25,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="record.circle.fill" catalog="system" subtitle="Record"/>
                                         <connections>
-                                            <action selector="startAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MO6-I2-pww"/>
+                                            <action selector="recordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KRQ-nJ-rRY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Izw-aT-zu4">
@@ -71,6 +71,13 @@
                             <constraint firstItem="zTe-sn-Fhc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xMq-MK-Phs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="infoLabel" destination="zTe-sn-Fhc" id="XY5-of-B5P"/>
+                        <outlet property="pauseButton" destination="Izw-aT-zu4" id="Gcq-X4-D4a"/>
+                        <outlet property="playButton" destination="mgJ-qq-Da5" id="d02-F2-frH"/>
+                        <outlet property="recordButton" destination="2tE-hr-S3M" id="Pvq-E5-4TY"/>
+                        <outlet property="stopButton" destination="Lmc-Pv-I1p" id="96C-7k-14C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

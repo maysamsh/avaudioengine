@@ -18,4 +18,8 @@ struct FileManagerHelper {
         let path = getDocumentsDirectory().appendingPathComponent(fileName)
         return path as URL
     }
+    
+    static func removeFile(from url: URL) {
+        try? FileManager.default.removeItem(at: url)
+    }
 }

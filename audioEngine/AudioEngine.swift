@@ -60,7 +60,7 @@ final class AudioEngine {
     }
     
     fileprivate func setupEngine() {
-        /// I don't know what the F is happening under the hood, but if you don't call these next few lines in one closure your code will crash.
+        /// I don't know what the heck is happening under the hood, but if you don't call these next few lines in one closure your code will crash.
         /// Maybe it's threading issue?
         self.engine.reset()
         let inputNode = engine.inputNode
@@ -70,6 +70,7 @@ final class AudioEngine {
         })
         engine.prepare()
         self.status = .ready
+        print("[AudioEngine]: Setup finished.")
     }
     
     func start()  {
@@ -118,6 +119,7 @@ final class AudioEngine {
         self.outputFile = nil
         self.engine.reset()
         self.engine.inputNode.removeTap(onBus: inputBus)
+        setupEngine()
     }
     
     func writePCMBuffer(buffer: AVAudioPCMBuffer, output: URL) {
@@ -134,7 +136,7 @@ final class AudioEngine {
                 print("[AudioEngine]: Audio file created.")
             }
             try outputFile?.write(from: buffer)
-            print("[AudioEngine] Writing buffer into the file...")
+            print("[AudioEngine]: Writing buffer into the file...")
         } catch {
             print("[AudioEngine]: Failed to write into the file.")
         }
